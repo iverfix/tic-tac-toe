@@ -1,9 +1,12 @@
+pub mod board;
 use std::fs;
 use std::io::prelude::*;
 use std::net::TcpListener;
 use std::net::TcpStream;
 
 fn main() {
+    let board = board::Board::default();
+    board.print();
     let listener = TcpListener::bind("0.0.0.0:7878").unwrap();
     for stream in listener.incoming() {
         let stream = stream.unwrap();
