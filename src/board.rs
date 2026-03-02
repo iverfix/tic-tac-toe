@@ -17,6 +17,10 @@ impl Board {
             board_string: ['.'; 9],
         }
     }
+
+    pub fn play(&mut self, x: usize, y: usize) {
+        self.board_string[y * 3 + x] = 'x';
+    }
 }
 
 impl Default for Board {

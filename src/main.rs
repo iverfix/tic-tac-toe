@@ -5,7 +5,8 @@ use std::net::TcpListener;
 use std::net::TcpStream;
 
 fn main() {
-    let board = board::Board::default();
+    let mut board = board::Board::default();
+    board.play(1, 1);
     board.print();
     let listener = TcpListener::bind("0.0.0.0:7878").unwrap();
     for stream in listener.incoming() {
